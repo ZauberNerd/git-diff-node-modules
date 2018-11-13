@@ -1,0 +1,38 @@
+{
+  "name": "git-diff-node-modules",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "ZauberNerd <zaubernerd@zaubernerd.de>",
+  "description": "`git diff-node-modules` to see a diff of the local modifications in your node_modules folder",
+  "keywords": [
+    "git",
+    "diff",
+    "node_modules",
+    "local",
+    "changes"
+  ],
+  "engines": {
+    "node": ">=8.10.0"
+  },
+  "bin": "bin.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "fmt": "prettier --write '*.ts'"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "dependencies": {
+    "fast-glob": "^2.2.3",
+    "find-up": "^3.0.0",
+    "fs-extra": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/find-up": "^2.1.1",
+    "@types/fs-extra": "^5.0.4",
+    "@types/node": "^10.12.5",
+    "prettier": "^1.15.2",
+    "typescript": "^3.1.6"
+  }
+}
