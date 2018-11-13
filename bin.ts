@@ -81,14 +81,16 @@ async function main(): Promise<void> {
   spawnSync('git', ['init'], { stdio: 'inherit' });
 
   spawnSync(hasYarnLock ? 'yarn' : 'npm', ['install', '--ignore-scripts'], {
-    stdio: 'inherit'
+    stdio: ['inherit', 'inherit', 'ignore']
   });
 
   spawnSync('git', ['add', '-f', '.', 'node_modules', ...packagePatterns], {
     stdio: 'ignore'
   });
 
-  spawnSync('git', ['commit', '-m', 'initial']);
+  spawnSync('git', ['commit', '--no-verify', '-m', 'initial'], {
+    stdio: 'ignore'
+  });
 
   spawnSync('cp', ['-r', join(root, 'node_modules'), tmp]);
   packages.forEach(p =>
@@ -98,7 +100,7 @@ async function main(): Promise<void> {
   spawnSync(
     'git',
     ['diff', '--', '.', ':(exclude)node_modules/.yarn-integrity'],
-    { stdio: 'inherit' }
+    { stdio: ['inherit', 'inherit', 'ignore'] }
   );
 }
 
