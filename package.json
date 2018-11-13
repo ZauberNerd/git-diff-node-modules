@@ -19,7 +19,7 @@
   ],
   "bin": "bin.js",
   "scripts": {
-    "prepublish": "yarn build",
+    "prepare": "yarn build",
     "build": "tsc",
     "watch": "tsc --watch",
     "fmt": "prettier --write '*.ts'"
