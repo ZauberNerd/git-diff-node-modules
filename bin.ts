@@ -84,13 +84,9 @@ async function main(): Promise<void> {
     stdio: 'inherit'
   });
 
-  const toAdd = [
-    '.',
-    'node_modules',
-    ...packages,
-    ...packages.map(p => join(p, 'node_modules'))
-  ];
-  spawnSync('git', ['add', '-f', ...toAdd]);
+  spawnSync('git', ['add', '-f', '.', 'node_modules', ...packagePatterns], {
+    stdio: 'ignore'
+  });
 
   spawnSync('git', ['commit', '-m', 'initial']);
 
