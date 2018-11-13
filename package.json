@@ -1,6 +1,6 @@
 {
   "name": "git-diff-node-modules",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "ZauberNerd <zaubernerd@zaubernerd.de>",
   "description": "`git diff-node-modules` to see a diff of the local modifications in your node_modules folder",
