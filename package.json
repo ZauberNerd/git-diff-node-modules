@@ -14,8 +14,12 @@
   "engines": {
     "node": ">=8.10.0"
   },
+  "files": [
+    "bin.js"
+  ],
   "bin": "bin.js",
   "scripts": {
+    "prepublish": "yarn build",
     "build": "tsc",
     "watch": "tsc --watch",
     "fmt": "prettier --write '*.ts'"
