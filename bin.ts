@@ -61,7 +61,7 @@ async function main(): Promise<void> {
     );
   }
 
-  const tmp = await mkdtemp(join(tmpdir(), manifest.name));
+  const tmp = await mkdtemp(join(tmpdir(), manifest.name.replace('/', '-')));
   process.chdir(tmp);
 
   const copyToTmp = (name: string): Promise<void> =>
